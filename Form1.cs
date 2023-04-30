@@ -26,5 +26,10 @@ namespace Stck_Figure_Drawing_Program
         {
 
         }
+
+        private void StickFigureDrawing_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

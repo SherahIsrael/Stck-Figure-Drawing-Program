@@ -398,6 +398,7 @@
             this.Name = "StickFigureDrawing";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stick Figure Drawing";
+            this.Load += new System.EventHandler(this.StickFigureDrawing_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PbSurface)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
