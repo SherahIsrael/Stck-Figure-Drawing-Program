@@ -42,7 +42,7 @@
             this.btnBlack = new System.Windows.Forms.Button();
             this.btnYellow = new System.Windows.Forms.Button();
             this.btnGreen = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRed = new System.Windows.Forms.Button();
             this.btnBlue = new System.Windows.Forms.Button();
             this.cmbColours = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -54,26 +54,27 @@
             this.btnRedo = new System.Windows.Forms.Button();
             this.radioSolid = new System.Windows.Forms.RadioButton();
             this.radioDashed = new System.Windows.Forms.RadioButton();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.TrackBrushSize = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.ColorDB = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.PbSurface)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackBrushSize)).BeginInit();
             this.SuspendLayout();
             // 
             // PbSurface
             // 
             this.PbSurface.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.PbSurface.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PbSurface.Location = new System.Drawing.Point(112, 103);
+            this.PbSurface.Location = new System.Drawing.Point(42, 33);
             this.PbSurface.Name = "PbSurface";
-            this.PbSurface.Size = new System.Drawing.Size(918, 664);
+            this.PbSurface.Size = new System.Drawing.Size(848, 588);
             this.PbSurface.TabIndex = 0;
             this.PbSurface.TabStop = false;
             // 
@@ -83,9 +84,9 @@
             this.groupBox1.Controls.Add(this.btnArmsDown);
             this.groupBox1.Controls.Add(this.btnArmsUp);
             this.groupBox1.Controls.Add(this.btnArmsStraight);
-            this.groupBox1.Location = new System.Drawing.Point(1062, 93);
+            this.groupBox1.Location = new System.Drawing.Point(928, 24);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(417, 674);
+            this.groupBox1.Size = new System.Drawing.Size(417, 597);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Stick Figures";
@@ -139,12 +140,12 @@
             this.groupBox2.Controls.Add(this.btnBlack);
             this.groupBox2.Controls.Add(this.btnYellow);
             this.groupBox2.Controls.Add(this.btnGreen);
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.btnRed);
             this.groupBox2.Controls.Add(this.btnBlue);
             this.groupBox2.Controls.Add(this.cmbColours);
-            this.groupBox2.Location = new System.Drawing.Point(112, 800);
+            this.groupBox2.Location = new System.Drawing.Point(41, 634);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(428, 287);
+            this.groupBox2.Size = new System.Drawing.Size(396, 287);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Colours";
@@ -154,7 +155,7 @@
             this.labelColour.AutoSize = true;
             this.labelColour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelColour.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelColour.Location = new System.Drawing.Point(321, 45);
+            this.labelColour.Location = new System.Drawing.Point(291, 45);
             this.labelColour.Name = "labelColour";
             this.labelColour.Size = new System.Drawing.Size(88, 77);
             this.labelColour.TabIndex = 8;
@@ -162,67 +163,73 @@
             // 
             // btnCustom
             // 
-            this.btnCustom.Location = new System.Drawing.Point(16, 124);
+            this.btnCustom.Location = new System.Drawing.Point(16, 112);
             this.btnCustom.Name = "btnCustom";
-            this.btnCustom.Size = new System.Drawing.Size(299, 43);
+            this.btnCustom.Size = new System.Drawing.Size(269, 50);
             this.btnCustom.TabIndex = 7;
             this.btnCustom.Text = "Custom";
             this.btnCustom.UseVisualStyleBackColor = true;
+            this.btnCustom.Click += new System.EventHandler(this.btnCustom_Click);
             // 
             // bnGrey
             // 
             this.bnGrey.BackColor = System.Drawing.Color.Gray;
             this.bnGrey.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.bnGrey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnGrey.Location = new System.Drawing.Point(270, 45);
+            this.bnGrey.Location = new System.Drawing.Point(245, 45);
             this.bnGrey.Name = "bnGrey";
-            this.bnGrey.Size = new System.Drawing.Size(45, 45);
+            this.bnGrey.Size = new System.Drawing.Size(40, 40);
             this.bnGrey.TabIndex = 6;
             this.bnGrey.UseVisualStyleBackColor = false;
+            this.bnGrey.Click += new System.EventHandler(this.bnGrey_Click);
             // 
             // btnBlack
             // 
             this.btnBlack.BackColor = System.Drawing.Color.Black;
             this.btnBlack.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnBlack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBlack.Location = new System.Drawing.Point(219, 45);
+            this.btnBlack.Location = new System.Drawing.Point(199, 45);
             this.btnBlack.Name = "btnBlack";
-            this.btnBlack.Size = new System.Drawing.Size(45, 45);
+            this.btnBlack.Size = new System.Drawing.Size(40, 40);
             this.btnBlack.TabIndex = 5;
             this.btnBlack.UseVisualStyleBackColor = false;
+            this.btnBlack.Click += new System.EventHandler(this.btnBlack_Click);
             // 
             // btnYellow
             // 
             this.btnYellow.BackColor = System.Drawing.Color.Yellow;
             this.btnYellow.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
             this.btnYellow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnYellow.Location = new System.Drawing.Point(168, 45);
+            this.btnYellow.Location = new System.Drawing.Point(153, 45);
             this.btnYellow.Name = "btnYellow";
-            this.btnYellow.Size = new System.Drawing.Size(45, 45);
+            this.btnYellow.Size = new System.Drawing.Size(40, 40);
             this.btnYellow.TabIndex = 4;
             this.btnYellow.UseVisualStyleBackColor = false;
+            this.btnYellow.Click += new System.EventHandler(this.btnYellow_Click);
             // 
             // btnGreen
             // 
             this.btnGreen.BackColor = System.Drawing.Color.Lime;
             this.btnGreen.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
             this.btnGreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGreen.Location = new System.Drawing.Point(117, 45);
+            this.btnGreen.Location = new System.Drawing.Point(107, 45);
             this.btnGreen.Name = "btnGreen";
-            this.btnGreen.Size = new System.Drawing.Size(45, 45);
+            this.btnGreen.Size = new System.Drawing.Size(40, 40);
             this.btnGreen.TabIndex = 3;
             this.btnGreen.UseVisualStyleBackColor = false;
+            this.btnGreen.Click += new System.EventHandler(this.btnGreen_Click);
             // 
-            // button2
+            // btnRed
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(66, 45);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(45, 45);
-            this.button2.TabIndex = 2;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnRed.BackColor = System.Drawing.Color.Red;
+            this.btnRed.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnRed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRed.Location = new System.Drawing.Point(61, 45);
+            this.btnRed.Name = "btnRed";
+            this.btnRed.Size = new System.Drawing.Size(40, 40);
+            this.btnRed.TabIndex = 2;
+            this.btnRed.UseVisualStyleBackColor = false;
+            this.btnRed.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // btnBlue
             // 
@@ -231,29 +238,31 @@
             this.btnBlue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBlue.Location = new System.Drawing.Point(15, 45);
             this.btnBlue.Name = "btnBlue";
-            this.btnBlue.Size = new System.Drawing.Size(45, 45);
+            this.btnBlue.Size = new System.Drawing.Size(40, 40);
             this.btnBlue.TabIndex = 1;
             this.btnBlue.UseVisualStyleBackColor = false;
+            this.btnBlue.Click += new System.EventHandler(this.btnBlue_Click);
             // 
             // cmbColours
             // 
             this.cmbColours.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbColours.FormattingEnabled = true;
-            this.cmbColours.Location = new System.Drawing.Point(15, 210);
+            this.cmbColours.Location = new System.Drawing.Point(16, 207);
             this.cmbColours.Name = "cmbColours";
             this.cmbColours.Size = new System.Drawing.Size(367, 49);
             this.cmbColours.TabIndex = 0;
             this.cmbColours.Text = "Colour Selector";
+            this.cmbColours.SelectedIndexChanged += new System.EventHandler(this.cmbColours_SelectedIndexChanged);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.trackBar1);
-            this.groupBox3.Location = new System.Drawing.Point(571, 800);
+            this.groupBox3.Controls.Add(this.TrackBrushSize);
+            this.groupBox3.Location = new System.Drawing.Point(465, 634);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(459, 145);
+            this.groupBox3.Size = new System.Drawing.Size(425, 145);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Brush Size";
@@ -262,9 +271,9 @@
             // 
             this.groupBox4.Controls.Add(this.radioDashed);
             this.groupBox4.Controls.Add(this.radioSolid);
-            this.groupBox4.Location = new System.Drawing.Point(571, 982);
+            this.groupBox4.Location = new System.Drawing.Point(465, 816);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(459, 105);
+            this.groupBox4.Size = new System.Drawing.Size(425, 105);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Line Style";
@@ -275,7 +284,7 @@
             this.groupBox5.Controls.Add(this.btnClear);
             this.groupBox5.Controls.Add(this.btnSave);
             this.groupBox5.Controls.Add(this.btnUndo);
-            this.groupBox5.Location = new System.Drawing.Point(1062, 800);
+            this.groupBox5.Location = new System.Drawing.Point(928, 634);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(417, 287);
             this.groupBox5.TabIndex = 5;
@@ -347,19 +356,20 @@
             this.radioDashed.UseVisualStyleBackColor = true;
             this.radioDashed.CheckedChanged += new System.EventHandler(this.radioDashed_CheckedChanged);
             // 
-            // trackBar1
+            // TrackBrushSize
             // 
-            this.trackBar1.Location = new System.Drawing.Point(19, 34);
-            this.trackBar1.Maximum = 20;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(434, 101);
-            this.trackBar1.TabIndex = 0;
-            this.trackBar1.Value = 5;
+            this.TrackBrushSize.Location = new System.Drawing.Point(6, 33);
+            this.TrackBrushSize.Maximum = 20;
+            this.TrackBrushSize.Name = "TrackBrushSize";
+            this.TrackBrushSize.Size = new System.Drawing.Size(405, 101);
+            this.TrackBrushSize.TabIndex = 0;
+            this.TrackBrushSize.Value = 5;
+            this.TrackBrushSize.Scroll += new System.EventHandler(this.TrackBrushSize_Scroll);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 89);
+            this.label1.Location = new System.Drawing.Point(34, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 29);
             this.label1.TabIndex = 1;
@@ -368,7 +378,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(218, 89);
+            this.label2.Location = new System.Drawing.Point(194, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 29);
             this.label2.TabIndex = 2;
@@ -377,7 +387,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(405, 89);
+            this.label3.Location = new System.Drawing.Point(372, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 29);
             this.label3.TabIndex = 3;
@@ -387,7 +397,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1609, 1118);
+            this.ClientSize = new System.Drawing.Size(1393, 1043);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -408,7 +418,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackBrushSize)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -430,7 +440,7 @@
         private System.Windows.Forms.Button btnBlack;
         private System.Windows.Forms.Button btnYellow;
         private System.Windows.Forms.Button btnGreen;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRed;
         private System.Windows.Forms.Button btnBlue;
         private System.Windows.Forms.Label labelColour;
         private System.Windows.Forms.Button btnCustom;
@@ -443,7 +453,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar TrackBrushSize;
+        private System.Windows.Forms.ColorDialog ColorDB;
     }
 }
 
