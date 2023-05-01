@@ -46,26 +46,26 @@
             this.btnBlue = new System.Windows.Forms.Button();
             this.cmbColours = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btnUndo = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnRedo = new System.Windows.Forms.Button();
-            this.radioSolid = new System.Windows.Forms.RadioButton();
-            this.radioDashed = new System.Windows.Forms.RadioButton();
-            this.TrackBrushSize = new System.Windows.Forms.TrackBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TrackBrushSize = new System.Windows.Forms.TrackBar();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.radioDashed = new System.Windows.Forms.RadioButton();
+            this.radioSolid = new System.Windows.Forms.RadioButton();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnRedo = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnUndo = new System.Windows.Forms.Button();
             this.ColorDB = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.PbSurface)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackBrushSize)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TrackBrushSize)).BeginInit();
             this.SuspendLayout();
             // 
             // PbSurface
@@ -77,6 +77,8 @@
             this.PbSurface.Size = new System.Drawing.Size(848, 588);
             this.PbSurface.TabIndex = 0;
             this.PbSurface.TabStop = false;
+            this.PbSurface.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PbSurface_MouseDown);
+            this.PbSurface.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PbSurface_MouseUp);
             // 
             // groupBox1
             // 
@@ -160,6 +162,7 @@
             this.labelColour.Size = new System.Drawing.Size(88, 77);
             this.labelColour.TabIndex = 8;
             this.labelColour.Text = "   ";
+            this.labelColour.Click += new System.EventHandler(this.labelColour_Click);
             // 
             // btnCustom
             // 
@@ -267,6 +270,43 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Brush Size";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(372, 89);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 29);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "20";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(194, 89);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 29);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "10";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 93);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(26, 29);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "1";
+            // 
+            // TrackBrushSize
+            // 
+            this.TrackBrushSize.Location = new System.Drawing.Point(6, 33);
+            this.TrackBrushSize.Maximum = 20;
+            this.TrackBrushSize.Name = "TrackBrushSize";
+            this.TrackBrushSize.Size = new System.Drawing.Size(405, 101);
+            this.TrackBrushSize.TabIndex = 0;
+            this.TrackBrushSize.Value = 5;
+            this.TrackBrushSize.Scroll += new System.EventHandler(this.TrackBrushSize_Scroll);
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.radioDashed);
@@ -278,58 +318,17 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Line Style";
             // 
-            // groupBox5
+            // radioDashed
             // 
-            this.groupBox5.Controls.Add(this.btnRedo);
-            this.groupBox5.Controls.Add(this.btnClear);
-            this.groupBox5.Controls.Add(this.btnSave);
-            this.groupBox5.Controls.Add(this.btnUndo);
-            this.groupBox5.Location = new System.Drawing.Point(928, 634);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(417, 287);
-            this.groupBox5.TabIndex = 5;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Actions";
-            // 
-            // btnUndo
-            // 
-            this.btnUndo.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUndo.Location = new System.Drawing.Point(42, 34);
-            this.btnUndo.Name = "btnUndo";
-            this.btnUndo.Size = new System.Drawing.Size(332, 53);
-            this.btnUndo.TabIndex = 0;
-            this.btnUndo.Text = "Undo";
-            this.btnUndo.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(42, 152);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(332, 53);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "Save Image";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(42, 219);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(332, 53);
-            this.btnClear.TabIndex = 2;
-            this.btnClear.Text = "Clear Surface";
-            this.btnClear.UseVisualStyleBackColor = true;
-            // 
-            // btnRedo
-            // 
-            this.btnRedo.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRedo.Location = new System.Drawing.Point(42, 93);
-            this.btnRedo.Name = "btnRedo";
-            this.btnRedo.Size = new System.Drawing.Size(332, 53);
-            this.btnRedo.TabIndex = 3;
-            this.btnRedo.Text = "Redo";
-            this.btnRedo.UseVisualStyleBackColor = true;
+            this.radioDashed.AutoSize = true;
+            this.radioDashed.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioDashed.Location = new System.Drawing.Point(250, 49);
+            this.radioDashed.Name = "radioDashed";
+            this.radioDashed.Size = new System.Drawing.Size(136, 35);
+            this.radioDashed.TabIndex = 1;
+            this.radioDashed.Text = "Dashed";
+            this.radioDashed.UseVisualStyleBackColor = true;
+            this.radioDashed.CheckedChanged += new System.EventHandler(this.radioDashed_CheckedChanged);
             // 
             // radioSolid
             // 
@@ -344,54 +343,58 @@
             this.radioSolid.Text = "Solid";
             this.radioSolid.UseVisualStyleBackColor = true;
             // 
-            // radioDashed
+            // groupBox5
             // 
-            this.radioDashed.AutoSize = true;
-            this.radioDashed.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioDashed.Location = new System.Drawing.Point(250, 49);
-            this.radioDashed.Name = "radioDashed";
-            this.radioDashed.Size = new System.Drawing.Size(136, 35);
-            this.radioDashed.TabIndex = 1;
-            this.radioDashed.Text = "Dashed";
-            this.radioDashed.UseVisualStyleBackColor = true;
-            this.radioDashed.CheckedChanged += new System.EventHandler(this.radioDashed_CheckedChanged);
+            this.groupBox5.Controls.Add(this.btnRedo);
+            this.groupBox5.Controls.Add(this.btnClear);
+            this.groupBox5.Controls.Add(this.btnSave);
+            this.groupBox5.Controls.Add(this.btnUndo);
+            this.groupBox5.Location = new System.Drawing.Point(928, 634);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(417, 287);
+            this.groupBox5.TabIndex = 5;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Actions";
             // 
-            // TrackBrushSize
+            // btnRedo
             // 
-            this.TrackBrushSize.Location = new System.Drawing.Point(6, 33);
-            this.TrackBrushSize.Maximum = 20;
-            this.TrackBrushSize.Name = "TrackBrushSize";
-            this.TrackBrushSize.Size = new System.Drawing.Size(405, 101);
-            this.TrackBrushSize.TabIndex = 0;
-            this.TrackBrushSize.Value = 5;
-            this.TrackBrushSize.Scroll += new System.EventHandler(this.TrackBrushSize_Scroll);
+            this.btnRedo.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRedo.Location = new System.Drawing.Point(42, 93);
+            this.btnRedo.Name = "btnRedo";
+            this.btnRedo.Size = new System.Drawing.Size(332, 53);
+            this.btnRedo.TabIndex = 3;
+            this.btnRedo.Text = "Redo";
+            this.btnRedo.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // btnClear
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 93);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 29);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "1";
+            this.btnClear.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(42, 219);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(332, 53);
+            this.btnClear.TabIndex = 2;
+            this.btnClear.Text = "Clear Surface";
+            this.btnClear.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // btnSave
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(194, 89);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 29);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "10";
+            this.btnSave.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(42, 152);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(332, 61);
+            this.btnSave.TabIndex = 1;
+            this.btnSave.Text = "Save Image";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // btnUndo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(372, 89);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 29);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "20";
+            this.btnUndo.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUndo.Location = new System.Drawing.Point(42, 34);
+            this.btnUndo.Name = "btnUndo";
+            this.btnUndo.Size = new System.Drawing.Size(332, 53);
+            this.btnUndo.TabIndex = 0;
+            this.btnUndo.Text = "Undo";
+            this.btnUndo.UseVisualStyleBackColor = true;
             // 
             // StickFigureDrawing
             // 
@@ -415,10 +418,10 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackBrushSize)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.TrackBrushSize)).EndInit();
             this.ResumeLayout(false);
 
         }

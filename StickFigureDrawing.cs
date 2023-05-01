@@ -14,6 +14,7 @@ namespace Stck_Figure_Drawing_Program
     public partial class StickFigureDrawing : Form
     {
         Pen drawingPen;
+        int mouseX, mouseY, mouseX1, mouseY1;
         
 
         public StickFigureDrawing()
@@ -86,14 +87,31 @@ namespace Stck_Figure_Drawing_Program
 
         private void btnGreen_Click(object sender, EventArgs e)
         {
-            labelColour.BackColor = Color.Green;
-            drawingPen.Color = Color.Green;
+            labelColour.BackColor = Color.Lime;
+            drawingPen.Color = Color.Lime;
         }
 
         private void btnYellow_Click(object sender, EventArgs e)
         {
             labelColour.BackColor = Color.Yellow;
             drawingPen.Color = Color.Yellow;
+        }
+
+        private void PbSurface_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseX = e.X;
+            mouseY = e.Y;
+        }
+
+        private void PbSurface_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseX1 = e.X;
+            mouseY1 = e.Y;
+        }
+
+        private void labelColour_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnBlack_Click(object sender, EventArgs e)
