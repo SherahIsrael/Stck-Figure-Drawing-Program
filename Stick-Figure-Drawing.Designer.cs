@@ -61,6 +61,7 @@
             this.btnUndo = new System.Windows.Forms.Button();
             this.ColorDB = new System.Windows.Forms.ColorDialog();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.saveDB = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.PbSurface)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -117,6 +118,7 @@
             this.btnArmsDown.Size = new System.Drawing.Size(111, 119);
             this.btnArmsDown.TabIndex = 2;
             this.btnArmsDown.UseVisualStyleBackColor = true;
+            this.btnArmsDown.Click += new System.EventHandler(this.btnArmsDown_Click_1);
             // 
             // btnArmsUp
             // 
@@ -336,6 +338,7 @@
             this.radioDashed.Text = "Dashed";
             this.radioDashed.UseVisualStyleBackColor = true;
             this.radioDashed.CheckedChanged += new System.EventHandler(this.radioDashed_CheckedChanged);
+            this.radioDashed.Click += new System.EventHandler(this.radioDashed_Click);
             // 
             // radioSolid
             // 
@@ -349,6 +352,7 @@
             this.radioSolid.TabStop = true;
             this.radioSolid.Text = "Solid";
             this.radioSolid.UseVisualStyleBackColor = true;
+            this.radioSolid.Click += new System.EventHandler(this.radioSolid_Click);
             // 
             // groupBox5
             // 
@@ -372,6 +376,7 @@
             this.btnRedo.TabIndex = 3;
             this.btnRedo.Text = "Redo";
             this.btnRedo.UseVisualStyleBackColor = true;
+            this.btnRedo.Click += new System.EventHandler(this.btnRedo_Click);
             // 
             // btnClear
             // 
@@ -382,6 +387,7 @@
             this.btnClear.TabIndex = 2;
             this.btnClear.Text = "Clear Surface";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSave
             // 
@@ -392,6 +398,7 @@
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Save Image";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnUndo
             // 
@@ -402,10 +409,18 @@
             this.btnUndo.TabIndex = 0;
             this.btnUndo.Text = "Undo";
             this.btnUndo.UseVisualStyleBackColor = true;
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
             // 
             // bindingSource1
             // 
             this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
+            // 
+            // saveDB
+            // 
+            this.saveDB.DefaultExt = "png";
+            this.saveDB.Filter = "Png|*.png";
+            this.saveDB.InitialDirectory = "Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)";
+            this.saveDB.Title = "SaveDB";
             // 
             // StickFigureDrawing
             // 
@@ -471,6 +486,7 @@
         private System.Windows.Forms.TrackBar TrackBrushSize;
         private System.Windows.Forms.ColorDialog ColorDB;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.SaveFileDialog saveDB;
     }
 }
 
