@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StickFigureDrawing));
             this.PbSurface = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -59,6 +60,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnUndo = new System.Windows.Forms.Button();
             this.ColorDB = new System.Windows.Forms.ColorDialog();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.PbSurface)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -66,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TrackBrushSize)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // PbSurface
@@ -77,6 +80,8 @@
             this.PbSurface.Size = new System.Drawing.Size(848, 588);
             this.PbSurface.TabIndex = 0;
             this.PbSurface.TabStop = false;
+            this.PbSurface.Click += new System.EventHandler(this.PbSurface_Click);
+            this.PbSurface.Paint += new System.Windows.Forms.PaintEventHandler(this.PbSurface_Paint);
             this.PbSurface.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PbSurface_MouseDown);
             this.PbSurface.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PbSurface_MouseUp);
             // 
@@ -122,7 +127,7 @@
             this.btnArmsUp.Size = new System.Drawing.Size(111, 119);
             this.btnArmsUp.TabIndex = 1;
             this.btnArmsUp.UseVisualStyleBackColor = true;
-            this.btnArmsUp.Click += new System.EventHandler(this.button2_Click);
+            this.btnArmsUp.Click += new System.EventHandler(this.btnArmsUp_Click);
             // 
             // btnArmsStraight
             // 
@@ -133,6 +138,8 @@
             this.btnArmsStraight.Size = new System.Drawing.Size(111, 119);
             this.btnArmsStraight.TabIndex = 0;
             this.btnArmsStraight.UseVisualStyleBackColor = true;
+            this.btnArmsStraight.Click += new System.EventHandler(this.btnArmsStraight_Click);
+            this.btnArmsStraight.Paint += new System.Windows.Forms.PaintEventHandler(this.btnArmsStraight_Paint);
             // 
             // groupBox2
             // 
@@ -396,6 +403,10 @@
             this.btnUndo.Text = "Undo";
             this.btnUndo.UseVisualStyleBackColor = true;
             // 
+            // bindingSource1
+            // 
+            this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
+            // 
             // StickFigureDrawing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -422,6 +433,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -458,6 +470,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TrackBar TrackBrushSize;
         private System.Windows.Forms.ColorDialog ColorDB;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }
 
