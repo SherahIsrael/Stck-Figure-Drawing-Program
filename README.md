@@ -24,6 +24,10 @@ Users should be able to:
 ### Screenshot
 
 ![ScreenShot](StickFigureDrawingProgram.png)
+This is the layout of the drawing program.
+
+![ScreenShot](TextForm.png)
+When the user right clicks on the drawing screen, the option of adding text will pop up.
 
 ### Built with
 
